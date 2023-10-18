@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 13.75, 8.5" name="enterpriseDB">
+  <DataContextMoniker Name="/enterpriseDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e7042150-1b29-411b-a5a0-470d11e449fb" absoluteBounds="3.625, 0.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/enterpriseDBDataContext/AuditDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bd955d45-5409-4bd9-aeb8-c4d590b503e8" absoluteBounds="3.64, 1.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cdf828f7-7b06-4c50-9485-4c11dd5f4c5a" absoluteBounds="0.75, 0.75, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/enterpriseDBDataContext/ClientDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="449d35c4-c77f-48b6-a4ec-0e37f490467a" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dbc9cea6-4b1d-4ca8-abe6-8e12dd143746" absoluteBounds="5.875, 0.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/enterpriseDBDataContext/AUDITRK" />
+      <nestedChildShapes>
+        <elementListCompartment Id="77f4110d-a7e6-4d99-bf78-c862c7c2547f" absoluteBounds="5.89, 1.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3e9d1a9c-f2fc-43c8-a8b3-b5eb074eed84" absoluteBounds="8.125, 0.625, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/enterpriseDBDataContext/LoanDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c3bb98c4-5095-4ceb-b098-b919a4f5b400" absoluteBounds="8.14, 1.0850000000000009, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.44314697265625); (3.625 : 1.44314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/enterpriseDBDataContext/ClientDetail/ClientDetail_AuditDetail" />
+      <nodes>
+        <classShapeMoniker Id="cdf828f7-7b06-4c50-9485-4c11dd5f4c5a" />
+        <classShapeMoniker Id="e7042150-1b29-411b-a5a0-470d11e449fb" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d0c5fed7-65d9-444d-8ec2-b0a86d44fe0e" absoluteBounds="11.5, 1.5, 2, 1.1939925130208331">
+      <DataClassMoniker Name="/enterpriseDBDataContext/Vendor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="603708a0-abf6-4ace-9ad7-7d1537476b35" absoluteBounds="11.515, 1.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="22e16e8e-951a-41f3-be3f-450a9583d73a" absoluteBounds="10.75, 3, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/enterpriseDBDataContext/Service" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cc17a0a8-c817-474a-a6aa-c3f208d47f58" absoluteBounds="10.765, 3.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="63021c32-a56a-4fbb-9513-48cb4c76a31d" absoluteBounds="5.625, 3.375, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/enterpriseDBDataContext/Loan_Service" />
+      <nestedChildShapes>
+        <elementListCompartment Id="660e39cc-85b2-4f49-a79c-340b9f4747c7" absoluteBounds="5.64, 3.835, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

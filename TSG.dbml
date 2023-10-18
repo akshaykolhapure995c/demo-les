@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TSGProduction" Class="TSGDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SHGDEV2016DB4;Initial Catalog=TSGProduction;Persist Security Info=True;User ID=tsguser" SettingsObjectName="MortgageTransfer.Properties.Settings" SettingsPropertyName="TSGConnection" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.FTPLog" Member="FTPLogs">
+    <Type Name="FTPLog">
+      <Column Name="FTPLogID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FileTransferFrom" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FileTransferTo" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IsDownload" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedFromServer" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FileLength" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CompanyID" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="IsFulfillment" Type="System.Boolean" DbType="bit" CanBeNull="true" />
+      <Column Name="FileTransferBackup" Type="System.String" DbType="varchar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FTPTransferLogin" Member="FTPTransferLogins">
+    <Type Name="FTPTransferLogin">
+      <Column Name="FTPTransferLoginID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LastVerified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PersonLogged" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NextMortgageRun" Storage="_NextRun" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastMortgageRun" Storage="_LastRun" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Insystem" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CurrentTransfer" Type="System.Boolean" DbType="bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CompanyAceMappings" Member="CompanyAceMappings">
+    <Type Name="CompanyAceMapping">
+      <Column Name="CompanyID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ACESClientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HasOrphans" Type="System.Boolean" DbType="bit" CanBeNull="true" />
+      <Column Name="LastMortgageRun" Storage="_LastRun" Type="System.DateTime" DbType="datetime" CanBeNull="true" />
+      <Column Name="ExternalMappings" Type="System.Boolean" DbType="bit" CanBeNull="true" />
+      <Column Name="CompanyShortName" Type="System.String" DbType="varchar(100)" CanBeNull="true" />
+      <Column Name="CompanyParentID" Type="System.Int32" DbType="int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Company" Member="Companies">
+    <Type Name="Company">
+      <Column Name="CompanyID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MDClientSweep" Type="System.Boolean" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="" Member="EmailLists">
+    <Type Name="EmailList">
+      <Column Name="AuditDesc" Type="System.String" CanBeNull="false" />
+      <Column Name="FileCount" Type="System.Int32" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Deals" Member="Deals">
+    <Type Name="Deal">
+      <Column Name="DealID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="" Member="LoanDeals">
+    <Type Name="LoanDeal">
+      <Column Name="ClientName" Type="System.String" DbType="varchar(150)" CanBeNull="true" />
+      <Column Name="LoanID" Type="System.Int32" DbType="int" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LoanNo" Type="System.String" DbType="nvarchar(50)" CanBeNull="true" />
+      <Column Name="LoanStatusID" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="DueDate" Type="System.DateTime" DbType="smalldatetime" CanBeNull="true" />
+      <Column Name="LoanStatusName" Type="System.String" DbType="nvarchar(50)" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="smalldatetime" CanBeNull="true" />
+      <Column Name="IsArchived" Type="System.Boolean" DbType="bit" CanBeNull="true" />
+      <Column Name="BorrowerName" Type="System.String" DbType="nvarchar(50)" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="nvarchar(50)" CanBeNull="false" />
+      <Column Name="DealName" Type="System.String" CanBeNull="false" />
+      <Column Name="LoanPath" Type="System.String" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CompanyDeals" Member="CompanyDeals">
+    <Type Name="CompanyDeal">
+      <Column Name="CompanyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DealID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoanFileDownload" Member="LoanFileDownloads">
+    <Type Name="LoanFileDownload">
+      <Column Name="LoanFileDownloadID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LoanFileID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FileName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="FileReceived" Type="System.DateTime" DbType="datetime" CanBeNull="false" />
+      <Column Name="FileSize" Type="System.Double" DbType="float" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Loanfile" Member="Loanfiles">
+    <Type Name="Loanfile">
+      <Column Name="LoanfileID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LoanFileAuditID" Type="System.Int32" DbType="Int" CanBeNull="false" />
+      <Column Name="LoanNumber" Type="System.String" DbType="varchar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="varchar(250)" CanBeNull="true" />
+      <Column Name="Added_Date" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FRStatusID" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="FRCost" Type="System.Decimal" DbType="money" CanBeNull="true" />
+      <Column Name="FRVendorID" Type="System.Int32" DbType="int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoanFileAudit" Member="LoanFileAudits">
+    <Type Name="LoanFileAudit">
+      <Column Name="LoanFileAuditID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AuditID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DealID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompanyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Added_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ListReceivedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FileSelectedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FileReceivedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QCFileSentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AuditName" Type="System.String" DbType="VarChar(400)" CanBeNull="true" />
+      <Column Name="ClientID" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="AuditReleaseDate" Type="System.DateTime" DbType="datetime" CanBeNull="true" />
+      <Column Name="AuditDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="db.ComboBoxFill" Member="ComboBoxFills">
+    <Type Name="ComboBoxFill">
+      <Column Name="DisplayValue" Type="System.String" DbType="varchar(50)" CanBeNull="false" />
+      <Column Name="ValueID" Type="System.Int32" DbType="int" CanBeNull="false" />
+      <Column Name="BitField" Type="System.Boolean" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FTPDirectory" Member="FTPDirectories">
+    <Type Name="FTPDirectory">
+      <Column Name="FTPDirectoryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DirectoryName" Storage="_Directory" Type="System.String" DbType="VarChar(1000)" CanBeNull="false" />
+      <Column Name="HasClientFolders" Type="System.Boolean" DbType="Bit" CanBeNull="false" />
+      <Column Name="DisplayName" Type="System.String" DbType="varchar(100)" CanBeNull="true" />
+      <Column Name="NewFolder" Type="System.String" DbType="varchar(100)" CanBeNull="true" />
+      <Column Name="CompanyID" Type="System.Int32" DbType="int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FTPSubDirectory" Member="FTPSubDirectories">
+    <Type Name="FTPSubDirectory">
+      <Column Name="FTPSubID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FTPSub" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CompanyFolders" Member="CompanyFolders">
+    <Type Name="CompanyFolder">
+      <Column Name="CompanyFolderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FolderPath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NotActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoanfileAssignments" Member="LoanfileAssignments">
+    <Type Name="LoanfileAssignment">
+      <Column Name="LoanfileAssignmentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LoanfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DueDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CompletedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LoanFileRoleID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoanFileFRDates" Member="LoanFileFRDates">
+    <Type Name="LoanFileFRDate">
+      <Column Name="LoanFileFRDateID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FRStatusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FRStatusDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LoanFileID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="" Member="AuditDatas">
+    <Type Name="AuditData">
+      <Column Name="LastName" Type="System.String" DbType="varchar(50)" CanBeNull="false" />
+      <Column Name="LOANNBR" Type="System.String" DbType="varchar(50)" CanBeNull="false" />
+      <Column Name="AuditID" Type="System.String" DbType="varchar(5)" CanBeNull="false" />
+      <Column Name="AuditDesc" Type="System.String" DbType="varchar(50)" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ReportServers" Member="ReportServers">
+    <Type Name="ReportServer">
+      <Column Name="ReportServerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ServerName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ServerURL" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DomainName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ArchFolder" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NASFolder" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FTPFolder" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DropFolder" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="" Member="LoanDetails">
+    <Type Name="LoanDetail">
+      <Column Name="LastName" Type="System.String" CanBeNull="false" />
+      <Column Name="LoanNbr" Type="System.String" CanBeNull="false" />
+      <Column Name="AuditID" Type="System.String" CanBeNull="false" />
+      <Column Name="AuditName" Type="System.String" CanBeNull="false" />
+      <Column Name="LoanPath" Type="System.String" CanBeNull="false" />
+      <Column Name="CompanyID" Type="System.Int32" CanBeNull="false" />
+      <Column Name="IsFulfillment" Type="System.Boolean" CanBeNull="true" />
+      <Column Name="LoanFileAuditID" Type="System.Int32" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="" Member="SweeperFolders">
+    <Type Name="SweeperFolders">
+      <Column Name="SweeperFolder" Type="System.String" CanBeNull="false" />
+      <Column Name="ServiceID" Type="System.Int32" CanBeNull="false" />
+      <Column Name="SweeperType" Type="System.Int32" CanBeNull="false" />
+      <Column Name="MortgageTransfer" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="isActive" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="PathLocationType" Type="System.Int32" CanBeNull="false" />
+      <Column Name="folderPath" Member="FolderPath" Type="System.String" CanBeNull="false" />
+      <Column Name="ilminpath" Member="ILMInPath" Type="System.String" CanBeNull="true" />
+      <Column Name="ilmoutpath" Member="ILMOutPath" Type="System.String" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
