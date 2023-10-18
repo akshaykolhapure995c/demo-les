@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1500
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MortgageTransfer", "MortgageTransfer\MortgageTransfer.csproj", "{B41D62AD-AE23-4880-8D68-015CC9C54DBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FTPTransfer_FLUW", "FTPTransfer_FLUW", "{518F78AF-F281-4D4B-87AB-51617776B5D7}"
+	ProjectSection(SolutionItems) = preProject
+		FTPTransfer_FLUW\App.config = FTPTransfer_FLUW\App.config
+		FTPTransfer_FLUW\AutoTransfer.cs = FTPTransfer_FLUW\AutoTransfer.cs
+		FTPTransfer_FLUW\AutoTransfer.Designer.cs = FTPTransfer_FLUW\AutoTransfer.Designer.cs
+		FTPTransfer_FLUW\AutoTransfer.resx = FTPTransfer_FLUW\AutoTransfer.resx
+		FTPTransfer_FLUW\FTPTransfer_FLUW.csproj = FTPTransfer_FLUW\FTPTransfer_FLUW.csproj
+		FTPTransfer_FLUW\FTPTransfer_FLUW.csproj.user = FTPTransfer_FLUW\FTPTransfer_FLUW.csproj.user
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B41D62AD-AE23-4880-8D68-015CC9C54DBD}.Debug|x86.ActiveCfg = Debug|x86
+		{B41D62AD-AE23-4880-8D68-015CC9C54DBD}.Debug|x86.Build.0 = Debug|x86
+		{B41D62AD-AE23-4880-8D68-015CC9C54DBD}.Release|x86.ActiveCfg = Release|x86
+		{B41D62AD-AE23-4880-8D68-015CC9C54DBD}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2471D557-A344-4D98-BFBA-A8818B68891E}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://shgatlmtfs1:8080/tfs/defaultcollection
+		SccProjectUniqueName0 = MortgageTransfer\\MortgageTransfer.csproj
+		SccProjectName0 = MortgageTransfer
+		SccLocalPath0 = MortgageTransfer
+		SccLocalPath1 = .
+	EndGlobalSection
+EndGlobal
